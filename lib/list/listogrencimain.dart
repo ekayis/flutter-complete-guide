@@ -11,6 +11,12 @@ void main() {
   ogrenciler.add(o2);
   ogrenciler.add(o3);
 
+  Iterable<Ogrenciler> filtrelenenListe = ogrenciler.where((ogrenci) {
+    return ogrenci.ad.contains("t"); //isminde t harfi olanlar gelecek.
+  });
+
+  ogrenciler = filtrelenenListe.toList();
+
   for (var o in ogrenciler) {
     print("****************");
     print("Öğrenci No : ${o.no}");
